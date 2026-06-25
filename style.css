@@ -1,0 +1,174 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e1ded93b;
+    padding: 20px;
+}
+
+/* Main Container split into two sides */
+.portfolio-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Left Light Section */
+.left-section {
+    flex: 1.1;
+    background-color: #e0e0e0;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.logo-icon {
+    font-size: 24px;
+    font-weight: 900;
+    border: 3px solid #000;
+    padding: 5px 10px;
+    display: inline-block;
+    letter-spacing: -1px;
+}
+
+.hero-text {
+    margin-top: -40px;
+}
+
+.greeting {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 54px;
+    font-weight: 800;
+    color: #000;
+    line-height: 1.1;
+}
+
+.title {
+    font-size: 16px;
+    color: #888;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #cccccc;
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.icon-box:hover {
+    background-color: #b5b5b5;
+}
+
+/* Right Dark Section */
+.right-section {
+    flex: 0.9;
+    background-color: #000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 40px 0 40px;
+}
+
+/* Diagonal Cut Effect */
+.right-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: 60px;
+    height: 100%;
+    background-color: #f3090900;
+    transform: skewX(-7deg);
+    transform-origin: top left;
+}
+
+/* Navbar Navigation */
+.navbar {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.navbar a:hover {
+    opacity: 1;
+}
+
+.navbar .contact-btn {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    opacity: 1;
+}
+
+/* Profile Image Handling */
+.profile-image-container {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 2;
+}
+
+.profile-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}

@@ -1,0 +1,208 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ade350d3; /* Dark Olive Charcoal */
+    padding: 20px;
+}
+
+/* Main Container split into two sides */
+.portfolio-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    background-color: #eec10e; /* Muted Olive Drab */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Left Light/Olive Section */
+.left-section {
+    flex: 1.1;
+    background-color: #83ce38; /* Olive base */
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.logo-icon {
+    font-size: 24px;
+    font-weight: 900;
+    color: #e2e8dd; /* Light sage tint */
+    border: 3px solid #e2e8dd;
+    padding: 5px 10px;
+    display: inline-block;
+    letter-spacing: -1px;
+}
+
+.hero-text {
+    margin-top: -40px;
+}
+
+.greeting {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0b0b0a; /* Accent lighter olive */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 54px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.title {
+    font-size: 15px;
+    color: #0c0b0bfc;
+    font-weight: 400;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+ 
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #83ce38; /* Olive base */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.icon-box:hover {
+    background-color: #809671;
+    color: #000;
+}
+
+/* Right Black Section */
+.right-section {
+    flex: 0.9;
+    background-color: #0d0e0c; /* Rich off-black */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+/* Diagonal Cut Effect */
+.right-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: 60px;
+    height: 100%;
+    background-color: #6fb02d;
+    transform: skewX(-7deg);
+    transform-origin: top left;
+}
+
+/* Navbar Navigation */
+.navbar {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    opacity: 1;
+    color: #809671; /* Olive accent glow */
+}
+
+.navbar .contact-btn {
+    background-color: #809671; /* Olive Button */
+    color: #0d0e0c;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    opacity: 1;
+}
+
+/* Skills Layout display */
+.skills-content {
+    position: relative;
+    z-index: 2;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.skill-card {
+    background-color: #161814; /* Deep charcoal tile */
+    border-left: 4px solid #7fee00; /* Dark olive edge border */
+    padding: 20px;
+    border-radius: 6px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    border-left-color: #5fd510; /* Brightens on hover */
+}
+
+.skill-icon {
+    font-size: 28px;
+    color: #66e810;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.skill-card p {
+    color: #626b5c;
+    font-size: 12px;
+}

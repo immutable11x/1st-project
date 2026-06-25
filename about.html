@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Portfolio</title>
+    <link rel="stylesheet" href="about-style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Motion Spotlight Backdrop -->
+    <div class="background-glow" id="spotlight"></div>
+
+    <div class="portfolio-container">
+        
+        <!-- LEFT PANEL: Image Background with High Contrast Text Overlays -->
+        <div class="left-section">
+            
+            <!-- Branding Area (Layered Top) -->
+            <div class="logo">
+                <span class="logo-icon">AD</span>
+                <p class="sub-logo">WHO I AM</p>
+            </div>
+            
+            <!-- Core Text Info (Layered Middle) -->
+            <div class="left-text-content animate-fade-in">
+                <h1 class="name">Aditya Kumar<br></h1>
+                <h2 class="title">Welcome to my digital space.</h2>
+                <p class="title">I am a front-end engineer focused on crafting sharp pixel structures. <br> take ideas and structure them into fast.. </p> 
+
+                </p>
+            </div>
+
+            <!-- Social Links (Layered Bottom) -->
+            <div class="social-icons">
+                <a href="#" class="icon-box"><i class="fa-solid fa-at"></i></a>
+                <a href="#" class="icon-box"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="icon-box"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Background Image Engine with Dark Fade Mask -->
+            <div class="left-profile-wrapper">
+                <div class="image-gradient-overlay"></div>
+                <img src="photo.png4.jpeg" alt="Aditya Kumar" class="left-profile-img">
+            </div>
+            
+        </div>
+
+        <!-- RIGHT PANEL: Dark Scrolling Text Narrative Section -->
+        <div class="right-section">
+            <nav class="navbar">
+                <a href="index.html" class="active"></a>
+                <a href="skills.html">Skills</a>
+                <a href="#">Portfolio</a>
+                <a href="#" class="contact-btn">CONTACT ME</a>
+            </nav>
+            
+            <!-- Animated Scroll Feed Area -->
+            <div class="about-scroll-content">
+                
+                <!-- Section Item 1 -->
+                <div class="about-card reveal">
+                    <span class="card-num">01 //</span>
+                    <h3>The Narrative</h3>
+                    <p>I am a front-end engineer focused on crafting sharp pixel structures. I take ideas and structural elements, filtering them into fast, high-performance web ecosystems with a modern minimalist approach.</p>
+                </div>
+
+                <!-- Section Item 2 -->
+                <div class="about-card reveal">
+                    <span class="card-num">02 //</span>
+                    <h3>Design Intent</h3>
+                    <p>My work works strictly within the rules of high visual balance. Relying heavily on brutalist structure, dark UI palettes, and calculated layouts, I believe digital spaces should be both fast and highly memorable.</p>
+                </div>
+
+                <!-- Section Item 3 -->
+                <div class="stats-row reveal">
+                    <div class="stat-box">
+                        <h4>24/7</h4>
+                        <p>Continuous Execution</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>100%</h4>
+                        <p>Pixel Devotion</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Interactive Mouse Trailer Element -->
+    <div class="custom-cursor"></div>
+
+    <!-- Motion Track & Reveal Logic Engine -->
+    <script>
+        // 1. Interactive Spotlight Backdrop Tracker
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            spotlight.style.background = `radial-gradient(circle 250px at ${x}px ${y}px, rgba(128, 150, 113, 0.12), transparent 80%)`;
+        });
+
+        // 2. Custom Cursor Positioning
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        const interactives = document.querySelectorAll('a, button, .icon-box, .about-card, .stat-box');
+        interactives.forEach(element => {
+            element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // 3. Vertical Scroll Window Target Reveal Tracker
+        const scrollArea = document.querySelector('.about-scroll-content');
+        const cards = document.querySelectorAll('.reveal');
+
+        function checkReveal() {
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (cardTop < windowHeight * 0.85) {
+                    card.classList.add('active');
+                }
+            });
+        }
+
+        scrollArea.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+    </script>
+</body>
+</html>
